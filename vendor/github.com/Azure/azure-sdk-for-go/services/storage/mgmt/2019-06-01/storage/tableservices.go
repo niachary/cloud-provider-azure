@@ -103,7 +103,7 @@ func (client TableServicesClient) GetServicePropertiesPreparer(ctx context.Conte
 		"tableServiceName":  autorest.Encode("path", "default"),
 	}
 
-	const APIVersion = "2019-06-01"
+	const APIVersion = "2017-10-01"
 	queryParameters := map[string]interface{}{
 		"api-version": APIVersion,
 	}
@@ -193,7 +193,7 @@ func (client TableServicesClient) ListPreparer(ctx context.Context, resourceGrou
 		"subscriptionId":    autorest.Encode("path", client.SubscriptionID),
 	}
 
-	const APIVersion = "2019-06-01"
+	const APIVersion = "2017-10-01"
 	queryParameters := map[string]interface{}{
 		"api-version": APIVersion,
 	}
@@ -287,7 +287,7 @@ func (client TableServicesClient) SetServicePropertiesPreparer(ctx context.Conte
 		"tableServiceName":  autorest.Encode("path", "default"),
 	}
 
-	const APIVersion = "2019-06-01"
+	const APIVersion = "2017-10-01"
 	queryParameters := map[string]interface{}{
 		"api-version": APIVersion,
 	}

@@ -29,7 +29,7 @@ import (
 )
 
 // The package's fully qualified name.
-const fqdn = "github.com/Azure/azure-sdk-for-go/services/compute/mgmt/2019-07-01/compute"
+const fqdn = "github.com/Azure/azure-sdk-for-go/services/compute/mgmt/2017-12-01/compute"
 
 // AccessLevel enumerates the values for access level.
 type AccessLevel string
@@ -11542,7 +11542,7 @@ type VirtualMachineScaleSetPublicIPAddressConfigurationProperties struct {
 	IPTags *[]VirtualMachineScaleSetIPTag `json:"ipTags,omitempty"`
 	// PublicIPPrefix - The PublicIPPrefix from which to allocate publicIP addresses.
 	PublicIPPrefix *SubResource `json:"publicIPPrefix,omitempty"`
-	// PublicIPAddressVersion - Available from Api-Version 2019-07-01 onwards, it represents whether the specific ipconfiguration is IPv4 or IPv6. Default is taken as IPv4. Possible values are: 'IPv4' and 'IPv6'. Possible values include: 'IPv4', 'IPv6'
+	// PublicIPAddressVersion - Available from Api-Version 2017-12-01 onwards, it represents whether the specific ipconfiguration is IPv4 or IPv6. Default is taken as IPv4. Possible values are: 'IPv4' and 'IPv6'. Possible values include: 'IPv4', 'IPv6'
 	PublicIPAddressVersion IPVersion `json:"publicIPAddressVersion,omitempty"`
 }
 

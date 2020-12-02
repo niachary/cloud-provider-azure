@@ -27,9 +27,9 @@ import (
 
 const (
 	// APIVersion is the API version for network.
-	APIVersion = "2019-06-01"
+	APIVersion = "2017-10-01"
 	// AzureStackCloudAPIVersion is the API version for Azure Stack
-	AzureStackCloudAPIVersion = "2018-02-01"
+	AzureStackCloudAPIVersion = "2017-10-01"
 	// AzureStackCloudName is the cloud name of Azure Stack
 	AzureStackCloudName = "AZURESTACKCLOUD"
 )

@@ -88,7 +88,7 @@ func (client HubVirtualNetworkConnectionsClient) GetPreparer(ctx context.Context
 		"virtualHubName":    autorest.Encode("path", virtualHubName),
 	}
 
-	const APIVersion = "2019-06-01"
+	const APIVersion = "2017-10-01"
 	queryParameters := map[string]interface{}{
 		"api-version": APIVersion,
 	}
@@ -164,7 +164,7 @@ func (client HubVirtualNetworkConnectionsClient) ListPreparer(ctx context.Contex
 		"virtualHubName":    autorest.Encode("path", virtualHubName),
 	}
 
-	const APIVersion = "2019-06-01"
+	const APIVersion = "2017-10-01"
 	queryParameters := map[string]interface{}{
 		"api-version": APIVersion,
 	}

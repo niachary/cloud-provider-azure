@@ -29,7 +29,7 @@ import (
 )
 
 // The package's fully qualified name.
-const fqdn = "github.com/Azure/azure-sdk-for-go/services/storage/mgmt/2019-06-01/storage"
+const fqdn = "github.com/Azure/azure-sdk-for-go/services/storage/mgmt/2017-10-01/storage"
 
 // AccessTier enumerates the values for access tier.
 type AccessTier string
