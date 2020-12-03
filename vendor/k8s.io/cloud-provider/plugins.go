@@ -120,7 +120,7 @@ func InitCloudProvider(name string, configFilePath string) (Interface, error) {
 		klog.Info("External cloud provider specified")
 		return nil, nil
 	}
-
+	klog.Info("config file path is %s", configFilePath)
 	if configFilePath != "" {
 		var config *os.File
 		config, err = os.Open(configFilePath)
