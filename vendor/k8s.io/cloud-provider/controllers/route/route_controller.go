@@ -25,7 +25,7 @@ import (
 
 	"k8s.io/klog/v2"
 
-	"k8s.io/api/core/v1"
+	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/labels"
 	"k8s.io/apimachinery/pkg/types"
@@ -123,6 +123,7 @@ func (rc *RouteController) Run(stopCh <-chan struct{}, syncPeriod time.Duration)
 }
 
 func (rc *RouteController) reconcileNodeRoutes() error {
+	klog.Infof("in reconcile node routes")
 	routeList, err := rc.routes.ListRoutes(context.TODO(), rc.clusterName)
 	if err != nil {
 		return fmt.Errorf("error listing routes: %v", err)
@@ -191,9 +192,10 @@ func (rc *RouteController) reconcile(nodes []*v1.Node, routes []*cloudprovider.R
 					// CreateRoute calls in flight.
 					rateLimiter <- struct{}{}
 					klog.Infof("Creating route for node %s %s with hint %s, throttled %v", nodeName, route.DestinationCIDR, nameHint, time.Since(startTime))
-					err := rc.routes.CreateRoute(context.TODO(), rc.clusterName, nameHint, route)
+					klog.Infof("commenting out creating routes")
+					//err := rc.routes.CreateRoute(context.TODO(), rc.clusterName, nameHint, route)
 					<-rateLimiter
-					if err != nil {
+					/*if err != nil {
 						msg := fmt.Sprintf("Could not create route %s %s for node %s after %v: %v", nameHint, route.DestinationCIDR, nodeName, time.Since(startTime), err)
 						if rc.recorder != nil {
 							rc.recorder.Eventf(
@@ -206,7 +208,7 @@ func (rc *RouteController) reconcile(nodes []*v1.Node, routes []*cloudprovider.R
 							klog.V(4).Infof(msg)
 							return err
 						}
-					}
+					}*/
 					l.Lock()
 					nodeRoutesStatuses[nodeName][route.DestinationCIDR] = true
 					l.Unlock()

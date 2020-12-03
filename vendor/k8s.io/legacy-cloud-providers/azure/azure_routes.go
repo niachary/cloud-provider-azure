@@ -133,6 +133,7 @@ func (d *delayedRouteUpdater) updateRoutes() {
 		return
 	}
 
+	klog.Infof("commenting out creating route table")
 	// create route table if it doesn't exists yet.
 	if !existsRouteTable {
 		err = d.az.createRouteTable()

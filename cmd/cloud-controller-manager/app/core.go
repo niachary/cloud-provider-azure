@@ -111,7 +111,8 @@ func startRouteController(ctx *cloudcontrollerconfig.CompletedConfig, cloud clou
 		klog.Infof("Will not configure cloud provider routes for allocate-node-cidrs: %v, configure-cloud-routes: %v.", ctx.ComponentConfig.KubeCloudShared.AllocateNodeCIDRs, ctx.ComponentConfig.KubeCloudShared.ConfigureCloudRoutes)
 		return nil, false, nil
 	}
-
+	klog.Infof("Calling startRouteController")
+	debug.PrinStack()
 	// If CIDRs should be allocated for pods and set on the CloudProvider, then start the route controller
 	routes, ok := cloud.Routes()
 	if !ok {

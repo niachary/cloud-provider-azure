@@ -677,7 +677,7 @@ func (az *Cloud) Initialize(clientBuilder cloudprovider.ControllerClientBuilder,
 
 // LoadBalancer returns a balancer interface. Also returns true if the interface is supported, false otherwise.
 func (az *Cloud) LoadBalancer() (cloudprovider.LoadBalancer, bool) {
-	return az, true
+	return az, false
 }
 
 // Instances returns an instances interface. Also returns true if the interface is supported, false otherwise.
@@ -693,7 +693,7 @@ func (az *Cloud) InstancesV2() (cloudprovider.InstancesV2, bool) {
 
 // Zones returns a zones interface. Also returns true if the interface is supported, false otherwise.
 func (az *Cloud) Zones() (cloudprovider.Zones, bool) {
-	return az, true
+	return az, false
 }
 
 // Clusters returns a clusters interface.  Also returns true if the interface is supported, false otherwise.
@@ -703,7 +703,7 @@ func (az *Cloud) Clusters() (cloudprovider.Clusters, bool) {
 
 // Routes returns a routes interface along with whether the interface is supported.
 func (az *Cloud) Routes() (cloudprovider.Routes, bool) {
-	return az, true
+	return az, false
 }
 
 // HasClusterID returns true if the cluster has a clusterID
