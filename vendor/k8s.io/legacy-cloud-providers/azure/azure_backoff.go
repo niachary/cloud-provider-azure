@@ -84,6 +84,7 @@ func (az *Cloud) GetVirtualMachineWithRetry(name types.NodeName, crt azcache.Azu
 			return true, cloudprovider.InstanceNotFound
 		}
 		if retryErr != nil {
+			klog.Infof("I am adding comments in GetVirtualMachineWithRetry in azure_backoff.go")
 			klog.Errorf("GetVirtualMachineWithRetry(%s): backoff failure, will retry, err=%v", name, retryErr)
 			return false, nil
 		}
