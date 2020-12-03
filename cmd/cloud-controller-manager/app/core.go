@@ -24,8 +24,9 @@ import (
 	"fmt"
 	"net"
 	"net/http"
-	"strings"
 	"runtime/debug"
+	"strings"
+
 	utilfeature "k8s.io/apiserver/pkg/util/feature"
 	cloudprovider "k8s.io/cloud-provider"
 	nodecontroller "k8s.io/cloud-provider/controllers/node"
@@ -112,7 +113,7 @@ func startRouteController(ctx *cloudcontrollerconfig.CompletedConfig, cloud clou
 		return nil, false, nil
 	}
 	klog.Infof("Calling startRouteController")
-	debug.PrinStack()
+	debug.PrintStack()
 	// If CIDRs should be allocated for pods and set on the CloudProvider, then start the route controller
 	routes, ok := cloud.Routes()
 	if !ok {
